@@ -5,7 +5,7 @@ function preprocessing()
 % Laboratorio de Ciencias Cognitivas, Cordoba Argentina
 % email: bioing.aromano@gmail.com; santiago_asa@gmail.com
 % Website: cognitivas.github.io
-% Nov 2018; Last revision: 08-Nov-2018
+% Nov 2018; Actualized: 06/2023
 % =========================================================================
 
 
@@ -93,7 +93,7 @@ regexp_anat    = '.nii';
 
 smoothing_kernel        = [5 5 5];
 TR                      = 2.0;
-nslices                 = 36; %como encuentro el nslices?
+nslices                 = 36; 
 TA                      = TR * (1-1/nslices);
 nSubj                   = 5;
 refslice                = 24;
@@ -113,7 +113,7 @@ spm_jobman('initcfg');
 sub_files = dir([MAIN_DIRECTORY, '/data/sub*']);
 
 subjectsXsession = 0; % counter for subjects x session
-%como cambio el subname sin hacer una lista eterna?
+
 subNames = {sub_files};
 nSubj = length(subNames); %use subjects as sessions 
 sessionNames = {'anat', 'func'};
@@ -124,9 +124,7 @@ maxSess = length(sessionNames);
 for iSub = 1%:length(sub_files)
     fprintf('\n');
     fprintf('Read data for Subject %d\n',iSub);
-                                               %puede ser sub-1* para que
-                                               %tome todos los 1? que son
-                                               %los sanos
+                                            
     subjdir = fullfile(MAIN_DIRECTORY, 'data', ['sub-*']);
     funcfiles = cell(1,1);
     for iSess = 1:maxSess
@@ -138,7 +136,7 @@ for iSub = 1%:length(sub_files)
         anatdir     =  fullfile(subjdir, 'anat');
         exp_anat = [sub_files(iSub).name, '_T1w.nii'];
         
-        %delete([MAIN_DIRECTORY, '/data/', sub_files(iSub).name, '/anat/', sub_files(iSub).name, '_T1w.nii.gz'])
+        %delete([MAIN_DIRECTORY, '/data/', sub_files(iSub).name, '/anat/', sub_files(iSub).name, '_T1w.nii.gz']) 
         anatfile    = spm_select('FPList', anatdir, exp_anat);
         
         if isequal(anatfile,  '') || not(exist(anatfile))
