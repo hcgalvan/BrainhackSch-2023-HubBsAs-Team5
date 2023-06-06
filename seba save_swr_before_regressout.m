@@ -1,12 +1,12 @@
 %este script guarda los archivos swau... antes de correr el regress out y
 %los guarda en /smooth
 
-sessions_dir = '/home/usuario/disco1/proyectos/2023-resting-state-estados-fMRI_conn/data/sub01';
+sessions_dir = '/home/usuario/disco1/CarpetasPersonales/seba/data/';
 sessions = dir(sessions_dir);
 sessions(1:2) = [];
 
-conditions = {'cond1', 'cond2', 'cond3', 'cond4'};
-condition_names = {'reposo', 'transicion', 'alteracion', 'recuperacion'};
+conditions = {'cond1'};
+condition_names = {'reposo'};
 
 for s=1:length(sessions)
     disp(sessions(s).name)
