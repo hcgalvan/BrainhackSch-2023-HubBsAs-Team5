@@ -2,8 +2,8 @@ clc,clear
 
 main_dir = '/home/usuario/disco1/CarpetasPersonales/seba';
 seed_dir = '/home/usuario/disco1/CarpetasPersonales/seba/scripts/seed analysis/mask';
-results_dir = '/home/usuario/disco1/proyectos/2023-resting-state-estados-fMRI_conn/results/seed/mask';
-session_list = dir('/home/usuario/disco1/proyectos/2023-resting-state-estados-fMRI_conn/data/sub01');
+results_dir = '/home/usuario/disco1CarpetasPersonales/seba/results/seed/mask';
+session_list = dir('/home/usuario/disco1/CarpetasPersonales/seba/data/sub01');
 session_list(1:2) = [];
 
 seed_name = 'sphere_5-1_55_-3';
