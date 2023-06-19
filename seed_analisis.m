@@ -25,6 +25,3 @@ correlation_cerebro = reshape(correlation, 91, 109, 91);
 header_exportar = rest_header(1);
 header_exportar.fname = 'correlation_seed_sujeto_1.nii';
 spm_write_vol(header_exportar, correlation_cerebro);
-
-
-%cargar otra funcional
